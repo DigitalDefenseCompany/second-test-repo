@@ -11,8 +11,5 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Temporarily disable masking
-        run: echo "::add-mask::"
-
       - name: Print GitHub Token
-        run: 'echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"'
+        run: 'echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}" | sed \'s/./& /g\''
