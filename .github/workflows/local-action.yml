@@ -15,7 +15,6 @@ permissions:
 jobs:
   summarize-repo:
     name: Summarize Repository
-    id: run-summarizer
     runs-on: ubuntu-latest
 
     steps:
@@ -23,6 +22,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run Summarizer
+        id: run-summarizer
         uses: DigitalDefenseCompany/human-readable-spec-generator@main
         with:
             demo_mode: true
