@@ -25,10 +25,11 @@ jobs:
         uses: DigitalDefenseCompany/repo-validator@main
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          
+
   summarize-repo:
     name: Summarize Repository
     runs-on: ubuntu-latest
+    needs: validate-repo
 
     steps:
       - name: Checkout
